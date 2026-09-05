@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>苗栗縣立照南國民中學 - 課表查詢系統</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 id="school-title">苗栗縣立照南國民中學</h1>
+      <p id="system-subtitle" class="subtitle">班級與教師課表查詢系統</p>
+    </header>
+
+    <div class="card controls-card">
+      <div class="control-group">
+        <label for="search-type">查詢模式：</label>
+        <select id="search-type">
+          <option value="class">班級課表</option>
+          <option value="teacher">教師課表</option>
+        </select>
+      </div>
+
+      <div class="control-group" id="class-select-group">
+        <label for="class-select">選擇班級：</label>
+        <select id="class-select"></select>
+      </div>
+
+      <div class="control-group" id="teacher-select-group" style="display: none;">
+        <label for="teacher-select">選擇教師：</label>
+        <select id="teacher-select"></select>
+      </div>
+    </div>
+
+    <div class="card timetable-card">
+      <div class="table-header-info">
+        <h2 id="current-target-title">載入中...</h2>
+        <span id="homeroom-info" class="badge"></span>
+      </div>
+      <div class="table-responsive">
+        <table id="timetable">
+          <thead>
+            <tr>
+              <th style="width: 15%;">節次 / 時間</th>
+              <th style="width: 17%;">星期一</th>
+              <th style="width: 17%;">星期二</th>
+              <th style="width: 17%;">星期三</th>
+              <th style="width: 17%;">星期四</th>
+              <th style="width: 17%;">星期五</th>
+            </tr>
+          </thead>
+          <tbody id="timetable-body">
+            <!-- 課表動態產生 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
